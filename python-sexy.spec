@@ -12,10 +12,9 @@ URL:		http://www.chipx86.com/wiki/Libsexy
 BuildRequires:	libsexy-devel >= 0.1.10
 BuildRequires:	libxml2-devel
 BuildRequires:	python-devel >= 2
-BuildRequires:	python-pygtk-devel >= 2.8.0
+BuildRequires:	python-pygtk-devel >= 2:2.8.0
 Requires:	libsexy >= 0.1.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 sexy-python is a set of Python bindings around libsexy.
@@ -28,20 +27,22 @@ sexy-python to zbiór dowiązań Pythona wokół biblioteki libsexy.
 
 %build
 %configure \
-	--enable-docs \
+	--enable-docs
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} DESTDIR=${RPM_BUILD_ROOT} install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog NEWS README
-%{py_sitedir}/gtk-2.0/sexy.so
+%doc AUTHORS ChangeLog NEWS README
+%attr(755,root,root) %{py_sitedir}/gtk-2.0/sexy.so
+# -devel? (R: python-pygtk-devel)
 %{_datadir}/pygtk/2.0/defs/sexy.defs
