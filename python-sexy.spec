@@ -3,7 +3,7 @@ Summary:	Python bindings to libsexy
 Summary(pl.UTF-8):	Dowiązania do biblioteki libsexy dla Pythona
 Name:		python-sexy
 Version:	0.1.9
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://releases.chipx86.com/libsexy/sexy-python/sexy-python-%{version}.tar.gz
@@ -28,7 +28,7 @@ Summary:	Development file for Python libsexy bindings
 Summary(pl.UTF-8):	Plik programistyczny wiązań libsexy dla Pythona
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	python-pygtk-deevl >= 2:2.8.0
+Requires:	python-pygtk-devel >= 2:2.8.0
 
 %description devel
 Development file for Python libsexy bindings.
