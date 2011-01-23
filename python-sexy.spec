@@ -11,10 +11,12 @@ Source0:	http://releases.chipx86.com/libsexy/sexy-python/sexy-python-%{version}.
 URL:		http://www.chipx86.com/wiki/Libsexy
 BuildRequires:	libsexy-devel >= 0.1.10
 BuildRequires:	libxml2-devel
+BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 2
 BuildRequires:	python-pygtk-devel >= 2:2.8.0
-Requires:	python-pygtk-gtk >= 2:2.8.0
+BuildRequires:	rpm-pythonprov
 Requires:	libsexy >= 0.1.10
+Requires:	python-pygtk-gtk >= 2:2.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
